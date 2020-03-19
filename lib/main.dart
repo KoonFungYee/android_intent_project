@@ -3,8 +3,12 @@ import 'package:android_intent/flag.dart';
 import 'package:flutter/material.dart';
 import 'package:platform/platform.dart';
 
+void main() {
+  runApp(MyApp());
+}
+
 /// A sample app for launching intents.
-class SetAlam extends StatelessWidget {
+class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -28,7 +32,7 @@ class MyHomePage extends StatelessWidget {
     final AndroidIntent intent = const AndroidIntent(
       action: 'android.intent.action.SET_ALARM',
       arguments: <String, dynamic>{
-        // 'android.intent.extra.alarm.DAYS': <int>[2, 3, 4, 5, 6],
+        'android.intent.extra.alarm.DAYS': <int>[2, 3, 4, 5, 6],
         'android.intent.extra.alarm.HOUR': 21,
         'android.intent.extra.alarm.MINUTES': 30,
         'android.intent.extra.alarm.SKIP_UI': true,
